@@ -13,25 +13,17 @@
 //     tobuylist.PushList(obj1);
 //     tobuylist.PushList(obj2);
 //     tobuylist.PrintList();
-
-#define PRICE 0
-#define INDEX 1
-
 class Shopping{
  public:
   void PushList(Goods object);
   Goods GetLastElement();
   void PrintList();
-  void SortByPriceOrIndex(int sortType);
-  
+  void SortByPrice();
+  void SortByIndex();
 
  private:
   std::vector<Goods> shopping_list_;
-  
-
-
- 
- 
 };
 
 #endif  // SHOPPING_H_
+
