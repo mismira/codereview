@@ -45,14 +45,14 @@ TEST(shopping_list_test, shopping_object_test) {
   ASSERT_EQ((shopping_object.GetLastElement()).GetIndex(), 2);
 
   // Test 1 - Sort by Price
-  shopping_object.SortByPrice();
+  shopping_object.SortByPriceOrIndex(PRICE);
 
   // Price of last element is 49900
   EXPECT_EQ((shopping_object.GetLastElement()).GetPrice(), 49900);
   ASSERT_EQ((shopping_object.GetLastElement()).GetIndex(), 4);
 
   // Test 2 - Sort by Index
-  shopping_object.SortByIndex();
+  shopping_object.SortByPriceOrIndex(INDEX);
 
   // Index of last element is 5
   EXPECT_EQ((shopping_object.GetLastElement()).GetPrice(), 4500);
