@@ -22,12 +22,9 @@ void Shopping::PrintList() {
 }
 
 
-
 // Sort shopping_list_ Elements by Price
 // Apply Selection Sort algorithm
-
-void Shopping::SortByPriceOrIndex(int sortType) {
-  
+void Shopping::SortByPrice() {
   std::vector<Goods>::iterator p = shopping_list_.begin();
   std::vector<Goods>::iterator min = shopping_list_.end();
   for (std::vector<Goods>::iterator i = shopping_list_.begin();
@@ -37,17 +34,33 @@ void Shopping::SortByPriceOrIndex(int sortType) {
         min = j;
         continue;
       }
-      if (sortType == PRICE){
-        if (min->GetPrice() > j->GetPrice()) {
-            min = j;
-         }
-      }
-      else {
-          if (min->GetIndex() > j->GetIndex()) {
-              min = j;
-          }       
+      if (min->GetPrice() > j->GetPrice()) {
+        min = j;
       }
     }
     std::iter_swap(i, min);
     min = shopping_list_.end();
+  }
 }
+
+// Sort shopping_list_ Elements by Index
+// Apply Selection Sort algorithm
+void Shopping::SortByIndex() {
+  std::vector<Goods>::iterator p = shopping_list_.begin();
+  std::vector<Goods>::iterator min = shopping_list_.end();
+  for (std::vector<Goods>::iterator i = shopping_list_.begin();
+      i != shopping_list_.end()-1; i++) {
+    for (std::vector<Goods>::iterator j = i; j != shopping_list_.end(); j++) {
+      if (min == shopping_list_.end()) {
+        min = j;
+        continue;
+      }
+      if (min->GetIndex() > j->GetIndex()) {
+        min = j;
+      }
+    }
+    std::iter_swap(i, min);
+    min = shopping_list_.end();
+  }
+}
+
