@@ -9,8 +9,8 @@
 class Goods{
  public:
   void SetGoodsInfo(int index, int price);
-  int GetIndex();
-  int GetPrice();
+  inline int GetIndex(){ return goods_index_; };
+  inline int GetPrice(){ return goods_price_; };
 
  private:
   int goods_index_ = 0;
