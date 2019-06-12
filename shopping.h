@@ -18,11 +18,16 @@ class Shopping{
   void PushList(Goods object);
   Goods GetLastElement();
   void PrintList();
-  void SortByPrice();
-  void SortByIndex();
+  void SortByPriceOrIndex(int sortType);
+  
 
  private:
   std::vector<Goods> shopping_list_;
+  
+
+
+ 
+ 
 };
 
 #endif  // SHOPPING_H_
