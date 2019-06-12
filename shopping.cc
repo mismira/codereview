@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #include "./shopping.h"
 
 // Push Goods object to shopping_list_ vector
