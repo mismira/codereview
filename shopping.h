@@ -13,6 +13,10 @@
 //     tobuylist.PushList(obj1);
 //     tobuylist.PushList(obj2);
 //     tobuylist.PrintList();
+
+#define PRICE 0
+#define INDEX 1
+
 class Shopping{
  public:
   void PushList(Goods object);
